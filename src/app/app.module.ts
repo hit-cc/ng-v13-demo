@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MyComponentComponent } from './my-component/my-component.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
-  declarations: [	
-    AppComponent,
-      MyComponentComponent
-   ],
+  declarations: [AppComponent, MyComponentComponent, ErrorComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' })
+    AppRoutingModule,
+    BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
-export class AppModule { }
+export class AppModule {}
