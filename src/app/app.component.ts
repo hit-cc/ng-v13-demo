@@ -1,4 +1,5 @@
 import { Component, Directive, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Router } from 'express';
 @Directive({selector: 'app-my-component'})
 export class Pane {
   @Input() id!: string;
@@ -16,9 +17,14 @@ export class AppComponent implements OnInit {
   @ViewChild('child1') firstChild!: ElementRef;
   //  learn about @ViewChild directory
   //syntax :-- @ViewChild(selector,{read:ReferenceType}) fieldName;
-  constructor(private element: ElementRef) {}
+  constructor(private element: ElementRef,private router:Router) {}
 
   ngOnInit(): void {
     console.log('Element Ref::', this.element.nativeElement);
+  }
+
+  redirectToMyComponent(){
+    // return this.router.navigateByUrl('/mycomponent')
+    
   }
 }
